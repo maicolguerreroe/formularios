@@ -1,0 +1,63 @@
+<h2>Reactivos:switches</h2>
+<hr>
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+  <!--RADIOS-->
+  <div class="row mb-3">
+    <label class="col-sm-2 col-form-label">Género</label>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input formControlName="genero" class="form-check-input" value="M" type="radio" id="radioMasculino">
+        <label class="form-check-label" for="radioMasculino">
+          Masculino
+        </label>
+      </div>
+      <div class="form-check">
+        <input formControlName="genero" class="form-check-input" value="F" type="radio" id="radioFemenino" checked>
+        <label class="form-check-label" for="radioFemenino">
+          Femenino
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--switch-->
+  <div class="row mb-3">
+    <label class="col-sm-2 col-form-label">Notificaciones</label>
+    <div class="col-sm-10">
+      <div class="form-check form-switch mt-2">
+        <input formControlName="notificaciones" class="form-check-input" type="checkbox" id="notificaciones">
+        <label class="form-check-label" for="notificaciones">Quiero recibir notificaciones</label>
+      </div>
+    </div>
+  </div>
+
+  <!--switch-->
+  <div class="row mb-3">
+    <label class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input formControlName="condiciones" class="form-check-input" type="checkbox" id="terminos" checked>
+        <label class="form-check-label" for="terminos">
+          Términos y condiciones de uso
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--boton submit-->
+  <div class="col">
+    <div class="col">
+      <button type="button" (click)="guardar()" class="btn btn-primary float-end">Guardar</button>
+    </div>
+  </div>
+</form>
+
+<h4>Valor del formulario</h4>
+<pre>{{miFormulario.value | json}}</pre>
+<br>
+<h4>Persona</h4>
+<pre>{{persona | json}}</pre>
+<br>
+<h5>Valid</h5>
+<pre>{{miFormulario.valid}}</pre>
+<br>
+<!-- <pre>Condiciones:</pre> -->
